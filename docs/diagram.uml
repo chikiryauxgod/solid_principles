@@ -1,0 +1,67 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam classFontSize 12
+
+class NumpyArray {
+  _data
+  _math
+  __add__
+  __sub__
+  __radd__
+  __rsub__
+  shape
+  __getitem__
+}
+
+interface ArrayData {
+  shape
+  add()
+  subtract()
+  add_scalar()
+  subtract_scalar()
+}
+
+class NumpyBasedArrayData {
+  _array : ndarray
+}
+
+class MathEngine {
+  _operations
+  add()
+  sub()
+  execute()
+  register()
+}
+
+interface MathOperation {
+  name
+  execute()
+}
+
+class Addition
+class Subtraction
+
+NumpyArray --> ArrayData
+NumpyArray --> MathEngine
+
+ArrayData <|.. NumpyBasedArrayData
+
+MathEngine o--> MathOperation
+
+MathOperation <|.. Addition
+MathOperation <|.. Subtraction
+
+note right of NumpyArray
+  основной класс для пользователя
+end note
+
+note bottom of ArrayData
+  главная абстракция данных
+end note
+
+note right of MathEngine
+  знает все операции
+end note
+
+@enduml

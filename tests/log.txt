@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0 -- /home/lev/prog/solid_principles/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/lev/prog/solid_principles
+collecting ... collected 6 items
+
+tests/test_array.py::test_add_two_arrays PASSED                          [ 16%]
+tests/test_array.py::test_add_scalar PASSED                              [ 33%]
+tests/test_array.py::test_radd_scalar PASSED                             [ 50%]
+tests/test_array.py::test_subtract_arrays PASSED                         [ 66%]
+tests/test_array.py::test_rsubtract_scalar PASSED                        [ 83%]
+tests/test_array.py::test_shape_ndim_size PASSED                         [100%]
+
+============================== 6 passed in 0.08s ===============================
